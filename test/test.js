@@ -110,6 +110,49 @@ describe("Testing card custom element", function () {
     });
   });
 
+  describe("and check the changes of the fields in the card", function () {
+    it("the name and color field has changed", async function () {
+      var nameContainer = await driver.findElement({ id: "name" });
+
+      assert.strictEqual(await nameContainer.getText(), "Hi! I'm Morty!");
+      assert.strictEqual(
+        await nameContainer.getCssValue("color"),
+        "rgba(0, 0, 255, 1)"
+      );
+    });
+    it("changed twitter field", async function () {
+      let twitterField = await driver.findElement({ id: "linkTwitter" });
+      assert.strictEqual(await twitterField.getText(), "@RickandMorty");
+      assert.strictEqual(
+        await twitterField.getAttribute("href"),
+        `https://twitter.com/RickandMorty`
+      );
+    });
+    it("changed github field", async function () {
+      let githubField = await driver.findElement({ id: "linkGithub" });
+      assert.strictEqual(await githubField.getText(), "getify");
+      assert.strictEqual(
+        await githubField.getAttribute("href"),
+        `https://github.com/getify`
+      );
+    });
+    it("changed website field", async function () {
+      let webField = await driver.findElement({ id: "linkWeb" });
+      assert.strictEqual(
+        await webField.getAttribute("href"),
+        "https://developer.mozilla.org/en-US/"
+      );
+    });
+    it("changed location field", async function () {
+      let locationField = await driver.findElement({ id: "linkLocation" });
+      assert.strictEqual(await locationField.getText(), "at Los Angeles");
+      assert.strictEqual(
+        await locationField.getAttribute("href"),
+        `https://www.google.com/maps/search/?api=1&query=Los%20Angeles`
+      );
+    });
+  });
+
   after(async function () {
     await driver.quit();
   });

@@ -380,6 +380,7 @@ function setInfo() {
     let github = document.createElement("span");
     let icon = document.createElement("img");
     let link = document.createElement("a");
+    link.setAttribute("id", "linkGithub");
 
     icon.src = "./assets/icons/github.ico";
     icon.style.width = "1em";
@@ -396,6 +397,7 @@ function setInfo() {
     let location = document.createElement("span");
     let icon = document.createElement("img");
     let link = document.createElement("a");
+    link.setAttribute("id", "linkLocation");
 
     icon.src = "./assets/icons/location_alt.png";
     icon.style.width = "1em";
@@ -415,6 +417,7 @@ function setInfo() {
     let website = document.createElement("span");
     let icon = document.createElement("img");
     let link = document.createElement("a");
+    link.setAttribute("id", "linkWeb");
 
     icon.src = "./assets/icons/website.png";
     icon.style.width = "1em";
