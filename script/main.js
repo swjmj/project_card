@@ -313,7 +313,7 @@ function setName() {
   if (this.hasAttribute("name")) {
     name.innerText = `Hi! I'm ${this.getAttribute("name")}!`;
   } else {
-    name.innerText = "Hi! I'm Angelo!";
+    name.innerText = "Name";
   }
 
   if (this.hasAttribute("nameColor")) {
@@ -338,8 +338,7 @@ function setAbout() {
   if (this.hasAttribute("about")) {
     aboutText.innerText = this.getAttribute("about");
   } else {
-    aboutText.innerText =
-      "Im a physicist/software developer.  \n I have experience with ReactJS, Leaflet, MongoDB and NodeJS.";
+    aboutText.innerText = "My description";
   }
 
   if (this.hasAttribute("aboutColor")) {
